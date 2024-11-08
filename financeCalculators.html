@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Calculators</title>
 
-    <!-- styles.css starts  -->
     <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -15,14 +21,76 @@
             flex-direction: column;
         }
 
+        /* Full-width Navbar styles */
+        nav {
+            width: 100%;
+            background-color: #333;
+            padding: 1rem;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffa500;
+        }
+
+        /* Menu toggle button for mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #333;
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Main content styles */
         .container {
             max-width: 800px;
             margin: 2rem auto;
             text-align: center;
-        }
-
-        h1 {
-            color: #333;
         }
 
         .calculator-buttons {
@@ -40,15 +108,13 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .calculator-buttons button:hover {
             background-color: #45a049;
         }
     </style>
-
-    <!-- styles.css ends  -->
-
 </head>
 <body>
 
@@ -57,13 +123,10 @@
         <ul class="nav-links">
             <li><a href="#worldDataVisual">WorldDataVisual</a></li>
             <li><a href="financeCalculators.html">Finance</a></li>
-            <!--<li><a href="#finance">Finance</a></li> -->
             <li><a href="#cv">CV</a></li>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
-
-    
 
     <div class="container">
         <h1>Financial Calculators</h1>
@@ -91,19 +154,16 @@
         </div>
     </div>
 
-    <!--script.js starts   -->
-
     <script>
-        // JavaScript function to open the specific calculator
         function openCalculator(calculatorName) {
-            // Redirect to a separate page or a section for each calculator
-            // You may update this to open specific calculator pages
             alert("Open " + calculatorName + " Calculator"); 
-            // For example, you might redirect to: window.location.href = calculatorName + ".html";
+        }
+
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
         }
     </script>
-
-    <!--script.js ends   -->
 
 </body>
 </html>
