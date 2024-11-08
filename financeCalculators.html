@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Calculators</title>
+
+    <!-- styles.css starts  -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,8 +46,24 @@
             background-color: #45a049;
         }
     </style>
+
+    <!-- styles.css ends  -->
+
 </head>
 <body>
+
+    <nav>
+        <div class="logo"><a href="index.html">WorldDataVisual</a></div>
+        <ul class="nav-links">
+            <li><a href="#worldDataVisual">WorldDataVisual</a></li>
+            <li><a href="financeCalculators.html">Finance</a></li>
+            <!--<li><a href="#finance">Finance</a></li> -->
+            <li><a href="#cv">CV</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    
 
     <div class="container">
         <h1>Financial Calculators</h1>
@@ -73,6 +91,8 @@
         </div>
     </div>
 
+    <!--script.js starts   -->
+
     <script>
         // JavaScript function to open the specific calculator
         function openCalculator(calculatorName) {
@@ -82,6 +102,8 @@
             // For example, you might redirect to: window.location.href = calculatorName + ".html";
         }
     </script>
+
+    <!--script.js ends   -->
 
 </body>
 </html>
