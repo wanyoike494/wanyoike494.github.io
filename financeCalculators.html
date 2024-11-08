@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Calculators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .calculator-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .calculator-buttons button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculator-buttons button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Financial Calculators</h1>
+        <div class="calculator-buttons">
+            <button onclick="openCalculator('npv')">NPV Calculator</button>
+            <button onclick="openCalculator('irr')">IRR Calculator</button>
+            <button onclick="openCalculator('roi')">ROI Calculator</button>
+            <button onclick="openCalculator('loan')">Loan Payment Calculator</button>
+            <button onclick="openCalculator('mortgage')">Mortgage Calculator</button>
+            <button onclick="openCalculator('compound-interest')">Compound Interest Calculator</button>
+            <button onclick="openCalculator('simple-interest')">Simple Interest Calculator</button>
+            <button onclick="openCalculator('savings-goal')">Savings Goal Calculator</button>
+            <button onclick="openCalculator('retirement')">Retirement Calculator</button>
+            <button onclick="openCalculator('debt-to-income')">Debt-to-Income Ratio Calculator</button>
+            <button onclick="openCalculator('break-even')">Break-even Point Calculator</button>
+            <button onclick="openCalculator('cash-flow')">Cash Flow Calculator</button>
+            <button onclick="openCalculator('future-value')">Future Value Calculator</button>
+            <button onclick="openCalculator('present-value')">Present Value Calculator</button>
+            <button onclick="openCalculator('amortization')">Amortization Calculator</button>
+            <button onclick="openCalculator('investment-return')">Investment Return Calculator</button>
+            <button onclick="openCalculator('payback-period')">Payback Period Calculator</button>
+            <button onclick="openCalculator('budget-planner')">Budget Planner</button>
+            <button onclick="openCalculator('expense-ratio')">Expense Ratio Calculator</button>
+            <button onclick="openCalculator('credit-card')">Credit Card Payment Calculator</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to open the specific calculator
+        function openCalculator(calculatorName) {
+            // Redirect to a separate page or a section for each calculator
+            // You may update this to open specific calculator pages
+            alert("Open " + calculatorName + " Calculator"); 
+            // For example, you might redirect to: window.location.href = calculatorName + ".html";
+        }
+    </script>
+
+</body>
+</html>

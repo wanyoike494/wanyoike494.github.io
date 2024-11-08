@@ -80,3 +80,9 @@ section h1 {
     margin-bottom: 1rem;
     color: #333;
 }
+
+.logo a {
+    color: white;
+    text-decoration: none; /* Removes underline */
+    font-size: 1.5rem;
+}
