@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPV Calculator</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        /* Full-width Navbar */
+        nav {
+            width: 100%;
+            background-color: #333;
+            padding: 1rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .input-group button {
+            width: 100%;
+            padding: 0.7rem;
+            font-size: 1rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .input-group button:hover {
+            background-color: #45a049;
+        }
+
+        .answer-box {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo"><a href="index.html">← Back to Homepage</a></div>
+    </nav>
+
+    <!-- NPV Calculator Container -->
+    <div class="container">
+        <h1>NPV Calculator</h1>
+        
+        <div class="input-group">
+            <label for="initialInvestment">Initial Investment ($):</label>
+            <input type="number" id="initialInvestment" placeholder="Enter initial investment" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="discountRate">Discount Rate (%):</label>
+            <input type="number" id="discountRate" placeholder="Enter discount rate" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="cashFlows">Cash Flows (comma separated):</label>
+            <input type="text" id="cashFlows" placeholder="Enter cash flows, e.g., 500, 700, 1000" required>
+        </div>
+        
+        <div class="input-group">
+            <button onclick="calculateNPV()">Calculate NPV</button>
+        </div>
+        
+        <div class="answer-box" id="answer">NPV: $0.00</div>
+    </div>
+
+    <script>
+        // Function to calculate NPV
+        function calculateNPV() {
+            const initialInvestment = parseFloat(document.getElementById("initialInvestment").value);
+            const discountRate = parseFloat(document.getElementById("discountRate").value) / 100;
+            const cashFlows = document.getElementById("cashFlows").value
+                .split(',')
+                .map(flow => parseFloat(flow.trim()));
+
+            if (isNaN(initialInvestment) || isNaN(discountRate) || cashFlows.some(isNaN)) {
+                alert("Please enter valid numbers for all fields.");
+                return;
+            }
+
+            // Calculate NPV
+            let npv = -initialInvestment;
+            cashFlows.forEach((cashFlow, i) => {
+                npv += cashFlow / Math.pow(1 + discountRate, i + 1);
+            });
+
+            // Display result
+            document.getElementById("answer").textContent = `NPV: $${npv.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
