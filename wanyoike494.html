@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About the Developer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    header {
+      background: #1e1e1e;
+      color: #fff;
+      padding: 20px;
+      width: 100%;
+    }
+    section {
+      padding: 20px;
+      max-width: 800px;
+    }
+    #photo {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+    }
+    #skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    #skills div {
+      background: #1e1e1e;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    #intro {
+      font-size: 1.5em;
+      color: #333;
+      margin: 10px 0;
+    }
+    #typing {
+      color: #1e90ff;
+    }
+
+    /* Full-width Navbar styles */
+        nav {
+            width: 100%;
+            background-color: #333;
+            padding: 2rem;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px;
+
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffa500;
+        }
+
+        /* Menu toggle button for mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #333;
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+        <div class="logo"><a href="index.html">WorldDataVisual</a></div>
+        <ul class="nav-links">
+            <!--<li><a href="index.html">World Data Visualizations</a></li> -->
+            <li><a href="financeCalculators.html">Finance Calculators</a></li>
+            <li><a href="wanyoike494.html">Joseph Wanyoike Njoroge</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+  <!--<header>
+    <h1>About the Developer</h1>
+    <p>Senior developer of <b>World Data Visualization Dashboard</b></p>
+  </header> -->
+
+  <section>
+    <img src="josephwanyoike.jpg" alt="Developer Photo" id="photo">
+    <h2>School</h2>
+    <p>Jomo Kenyatta University of Agriculture and Technology</p>
+    <h2>Skills</h2>
+    <div id="skills">
+      <div>Data Science</div>
+      <div>Web Development</div>
+      <div>Finance</div>
+      <div>JavaScript</div>
+      <div>Python</div>
+      <div>TypeScript</div>
+      <div>Brain.js</div>
+      <div>Azure & AWS</div>
+    </div>
+    <div id="intro">I am into <span id="typing"></span></div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+    const texts = ["data science", "web development", "finance", "image classification", "machine learning", "data visualization"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+    
+    function type() {
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      document.getElementById("typing").textContent = letter;
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(() => type(), 1000);
+      } else {
+        setTimeout(type, 150);
+      }
+    }
+    type();
+  </script>
+
+</body>
+</html>
