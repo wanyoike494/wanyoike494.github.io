@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDP Page</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .navbar button:hover {
+            background-color: #777;
+        }
+
+        /* Page content */
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        /* Buttons section */
+        .button-section {
+            margin-top: 20px;
+        }
+
+        .button-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .button-section button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-section button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar button {
+                margin-top: 10px;
+            }
+
+            .button-section button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <button onclick="openHomePage()">Home</button>
+        <span>GDP Dashboard</span>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <h1>Understanding GDP</h1>
+        <p>Gross Domestic Product (GDP) is the total monetary or market value of all the finished goods and services produced within a country's borders in a specific time period. It serves as a comprehensive scorecard of a country’s economic health.</p>
+
+        <h2>Why is GDP Important?</h2>
+        <p>GDP provides an economic snapshot of a country, used to estimate the size of an economy and growth rate. Policymakers, economists, and analysts use it to gauge the economy’s performance and make informed decisions.</p>
+
+        <h2>How is GDP Measured?</h2>
+        <p>GDP can be measured in three primary ways: the production approach, the income approach, and the expenditure approach. In principle, all three methods should yield the same GDP number:</p>
+        <ul>
+            <li><b>Production Approach:</b> Calculates GDP as the value of all goods and services produced, less the value of goods and services used in production.</li>
+            <li><b>Income Approach:</b> Adds up total compensation to employees, gross profits for incorporated and nonincorporated firms, and taxes less subsidies.</li>
+            <li><b>Expenditure Approach:</b> Adds up consumption, investment, government spending, and net exports.</li>
+        </ul>
+
+        <!-- Buttons Section -->
+        <div class="button-section">
+            <h2>Click any of the following links to view GDP Dashboards</h2>
+            <button onclick="openExternalLink('https://gdp-dashboard-kmdj4gmwxvq.streamlit.app/')">Streamlit Dashboard</button>
+            <button onclick="openExternalLink('https://example.com/dashboard2')">Dashboard 2</button>
+            <button onclick="openExternalLink('https://example.com/dashboard3')">Dashboard 3</button>
+        </div>
+    </div>
+
+    <script>
+        function openHomePage() {
+            window.location.href = 'index.html'; // Change this to the actual home page file
+        }
+
+        function openExternalLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
