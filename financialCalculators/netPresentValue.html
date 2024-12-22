@@ -104,6 +104,54 @@
                 padding: 1rem;
             }
         }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffa500;
+        }
+
+        /* nav {
+            display: flex;
+            justify-content: space-between; /* Distribute space between items
+            align-items: center; /* Align items vertically in the center
+            padding: 10px 20px; /* Add some padding to the navigation bar
+            background-color: #f4f4f4; /* Optional: Background color
+        } */
+
+        .logo {
+            flex: 1; /* Take as much space as needed for the logo */
+        }
+
+        .nav-links {
+            list-style: none; /* Remove bullet points */
+            display: flex; /* Arrange links horizontally */
+            gap: 20px; /* Add space between links */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav-links li a {
+            text-decoration: none; /* Remove underline from links */
+            color: white; /* Set link color */
+            font-weight: bold; /* Optional: Bold text */
+        }
+
+        nav a:hover {
+            color: #007bff; /* Optional: Change color on hover */
+        }
+
     </style>
 </head>
 <body>
@@ -111,6 +159,12 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="logo"><a href="index.html">← Back to Homepage</a></div>
+        <!--<div class="logoright"><a href="financeCalculators.html">← Back to Financial Calculators</a></div> -->
+        <ul class="nav-links">
+            <!--<li><a href="index.html">World Data Visualizations</a></li> -->
+            <li><a href="financeCalculators.html">Finance Calculators</a></li>
+            <!--<li><a href="wanyoike494.html">Joseph Wanyoike Njoroge</a></li> -->
+        </ul>
     </nav>
 
     <!-- NPV Calculator Container -->
